@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FIT • Desafio</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#00a859">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar"><h1>FIT • Desafio</h1><div id="status"></div></header>
+<nav class="nav">
+<button data-tab="dashboard" class="active">Dashboard</button>
+<button data-tab="jejum">Jejum</button>
+<button data-tab="treino">Treino</button>
+<button data-tab="compras">Compras</button>
+<button data-tab="nutricao">Nutrição</button>
+<button data-tab="relatorios">Relatórios</button>
+</nav>
+<main id="main">
+<section id="dashboard" class="tab active">
+  <h2>Dashboard</h2>
+  <div class="kpis">
+    <div class="card">Peso: <span id="peso">--</span> kg</div>
+    <div class="card">Calorias: <span id="calDia">0</span>/<span id="metaCal">1300</span></div>
+    <div class="card">Jejum: <span id="jejumStatus">Não em jejum</span></div>
+  </div>
+  <div class="actions">
+    <button id="startJejum">Iniciar Jejum</button>
+    <button id="stopJejum">Encerrar Jejum</button>
+    <button id="startWalk">Iniciar Caminhada</button>
+  </div>
+  <h3>Checklist do Dia</h3>
+  <div id="checks"></div>
+</section>
+<section id="jejum" class="tab">
+  <h2>Jejum</h2>
+  <div id="jejumInfo"></div>
+  <div class="controls"><button id="btnStartF">Iniciar</button><button id="btnStopF">Parar</button></div>
+  <h3>Histórico</h3><ul id="fastHistory"></ul>
+</section>
+<section id="treino" class="tab">
+  <h2>Treinos</h2>
+  <div id="routines"></div>
+  <button id="addRoutine">Criar Rotina</button>
+  <div id="workoutPanel"></div>
+</section>
+<section id="compras" class="tab">
+  <h2>Lista de Compras</h2>
+  <div id="shoppingList"></div>
+  <button id="addItem">Adicionar Item</button>
+  <div id="shoppingTotal"></div>
+</section>
+<section id="nutricao" class="tab">
+  <h2>Nutrição</h2>
+  <form id="foodForm">
+    <input id="foodName" placeholder="Nome do alimento" required>
+    <input id="foodQty" placeholder="Quantidade" type="number" value="1">
+    <input id="foodKcal" placeholder="Kcal total" type="number" value="0">
+    <button type="submit">Adicionar</button>
+  </form>
+  <ul id="foodLog"></ul>
+</section>
+<section id="relatorios" class="tab">
+  <h2>Relatórios</h2>
+  <canvas id="chart" width="400" height="200"></canvas>
+</section>
+</main>
+<footer class="footer">FIT • Offline PWA</footer>
+<script src="chart.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
